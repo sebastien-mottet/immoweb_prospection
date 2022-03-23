@@ -1,0 +1,6 @@
+/scrapper/env
+docker-compose.yml
+docker-compose-dev.yml
+/scrapper/utils/config.py
+**/__pycache__
+
