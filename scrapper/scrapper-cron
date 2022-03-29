@@ -1,1 +1,1 @@
-*/6 * * * * BASH_ENV=/etc/profile bash -c "/usr/local/bin/python3 /code/scrapper.py >> /var/log/cron.log 2>&1"
+* */12 * * * BASH_ENV=/etc/profile bash -c "/usr/local/bin/python3 /code/scrapper.py >> /var/log/cron.log 2>&1"

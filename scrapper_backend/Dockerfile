@@ -10,5 +10,9 @@ COPY . /code/
 
 RUN pip install -r requirements.txt
 
+# Upgrade pip
+RUN pip install --upgrade pip
+
 # Install uWSGI
 RUN pip install uwsgi
+

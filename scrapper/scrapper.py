@@ -49,7 +49,7 @@ def login(driver, mail, pwd):
     my_immo_button = driver.find_element_by_id('myImmowebMenu')
     my_immo_button.click()
     mail_input = driver.find_element_by_id('emailInput')
-    pwd_input = driver.find_element_by_id('passwordInput')
+    pwd_input = driver.find_element_by_xpath('//input[@name="login-password"]')
     mail_input.send_keys(mail)
     pwd_input.send_keys(pwd)
     pwd_input.send_keys(Keys.RETURN)
@@ -157,15 +157,15 @@ def send_message(driver, property_code, message):
     send_message_checkbox_label = driver.find_element_by_xpath(
         '//fieldset[@class="input-after-message"]//label')
     submit_button = driver.find_element_by_class_name('sendMyRequestButton')
-    if not send_message_checkbox.is_selected():
-        send_message_checkbox_label.click()
+    #if not send_message_checkbox.is_selected():
+    #    send_message_checkbox_label.click()
 
     message_textarea.clear()
     message_textarea.click()
     message_textarea.send_keys(message)
     phone_input.send_keys(PHONE)
     if STAGE == "prod" or (STAGE == "test" and TEST_IMMOWEB_CODE == property_code):
-        random_sleep(1, 2)
+        random_sleep(2, 4)
         submit_button.submit()
     random_sleep()
     return True
@@ -188,7 +188,7 @@ def execute_prospection(driver):
 
 
 def main():
-    random_sleep(15, 20)
+    random_sleep(15, 360)
     driver = get_driver(headless=True)
     driver.get("https://www.immoweb.be/fr")
     if STAGE in ['prod', 'test']:

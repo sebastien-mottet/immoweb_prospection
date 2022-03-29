@@ -3,4 +3,5 @@ docker-compose.yml
 docker-compose-dev.yml
 /scrapper/utils/config.py
 **/__pycache__
-
+/scrapper_backend/static
+/scrapper_backend/data
